@@ -27,7 +27,7 @@ author:
   bio              : # "Short biography for the left-hand sidebar"
   location         : "Singapore"
   employer         : "National University of Singapore"
-  uri              : "https//sakiwu.com"
+  uri              : "cv"
   email            : "tosaki.wzx@gmail.com" 
 
   # Academic websites
@@ -58,7 +58,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : "https://www.linkedin.com/in/zhengxiao-wu"# Username
+  linkedin         : "zhengxiao-wu"# Username
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
