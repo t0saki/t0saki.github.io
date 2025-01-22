@@ -14,3 +14,4 @@ redirect_from:
 | Short Link Generation Service | [Short Link](https://yuricon.us.kg/) | Shorten links |
 | Self-hosted Mail Server | [Mail Server](https://mail.sakiwu.com/) | Send and receive emails |
 | OpenWrt Build Service | [OpenWrt Build](https://github.com/t0saki/openwrt-personal) | Build OpenWrt firmware optimized for mainland China and new generation CPU microarchitecture |
+| Kindle Screenshot Uploader | [Kindle Screenshot](https://github.com/t0saki/Kindle-Screenshots-Uploader) | Upload Kindle screenshot to Image Hosting or WebDAV |
