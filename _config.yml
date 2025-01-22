@@ -21,7 +21,7 @@ repository               : "t0saki/t0saki.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "avatar.jpg"
   name             : "Wu Zhengxiao"
   pronouns         : "he/him" 
   bio              : # "Short biography for the left-hand sidebar"
