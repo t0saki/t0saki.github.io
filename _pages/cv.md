@@ -58,7 +58,7 @@ Deep Learning-based WIFI-CSI Sitting Detection System
 
 Extensive experience with Homelab and VPS, with strong network knowledge, and a spirit of discovery.
 
-**Development Projects**: Personal [LLM Chat Website](https://chat2.sakiko.us.kg/), Java version of Wordle [Wordle-Java](https://github.com/t0saki/Wordle_JavaMiniProject), standards-compliant DNS server and client [Project-DNS](https://github.com/t0saki/Project-DNS), automated logistics [bupt-car](https://github.com/t0saki/bupt_car_2), assembly interpreter [Assembly-VM](https://github.com/t0saki/assembly_VM), etc.
+**Development Projects**: Personal [LLM Chat Website](https://chat.tosaki.top/), Java version of Wordle [Wordle-Java](https://github.com/t0saki/Wordle_JavaMiniProject), standards-compliant DNS server and client [Project-DNS](https://github.com/t0saki/Project-DNS), automated logistics [bupt-car](https://github.com/t0saki/bupt_car_2), assembly interpreter [Assembly-VM](https://github.com/t0saki/assembly_VM), etc.
 
 **Skills**: C++, Python, Java, PostgreSQL, Git, PyTorch, Linux operation, Docker, Flask, Kubernetes.
 
