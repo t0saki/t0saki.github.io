@@ -26,7 +26,8 @@ BSc(Eng) Telecommunications Engineering with Management (Multimedia Track) | Ful
 **Luchen Technology Co. Ltd.** | *Dec. 2024 – Apr. 2025 (expected)*  
 Luchentech (Colossal-AI) - HPC-AI Cloud - Cloud Platform Developer Intern | Singapore
 * Perform full process development of backend Go services, PostgreSQL, and Kubernetes Helm deployments.
-* Optimized the billing system to allow clusters to update payment cycles without downtime (annual and monthly switching).
+* Implemented a scheduled execution mode for elastic containers, enabling flexible resource management.
+* Optimized the billing system to allow clusters to update payment mode without downtime.
 
 **ByteDance Ltd.** | *Jun. 2023 – Jun. 2024*  
 ByteDance - Applied Machine Learning (AML) - Backend Developer Intern | Haidian, Beijing
