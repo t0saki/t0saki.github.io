@@ -12,7 +12,7 @@ title                    : "tosaki's home"
 title_separator          : "-"
 name                     : &name "Wu Zhengxiao"
 description              : &description "Computing@NUS"
-url                      : https://wzx.im # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
+url                      : https://zhxwu.com # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "t0saki/t0saki.github.io"
 
