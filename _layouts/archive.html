@@ -12,8 +12,8 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main" {% if page.permalink contains '/blog/' or page.permalink contains '/zh/blog/' %}class="no-sidebar"{% endif %}>
-  {% if page.permalink contains '/blog/' or page.permalink contains '/zh/blog/' %}
+<div id="main" role="main" {% if page.permalink contains '/blog/' or page.permalink contains '/zh/blog/' or page.permalink contains '/posts/' %}class="no-sidebar"{% endif %}>
+  {% if page.permalink contains '/blog/' or page.permalink contains '/zh/blog/' or page.permalink contains '/posts/' %}
     <!-- No sidebar for blog pages -->
   {% else %}
     {% include sidebar.html %}
