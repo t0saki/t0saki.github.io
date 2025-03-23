@@ -17,16 +17,14 @@
           {% endfor %}
           
           <!-- 语言切换器 - 简洁的 EN/中文 形式 -->
-          <li class="masthead__menu-item lang-switcher">
-            {% if page.lang == 'zh' %}
-              <a href="#" data-lang="en">EN</a>
-              <span class="lang-separator">/</span>
-              <span class="current-lang">中文</span>
-            {% else %}
-              <span class="current-lang">EN</span>
-              <span class="lang-separator">/</span>
-              <a href="#" data-lang="zh">中文</a>
-            {% endif %}
+          <li class="masthead__menu-item">
+            <span class="lang-switcher">
+              {% if page.lang == 'zh' %}
+                <a href="#" data-lang="en">EN</a><span class="lang-separator">/</span><span class="current-lang">中文</span>
+              {% else %}
+                <span class="current-lang">EN</span><span class="lang-separator">/</span><a href="#" data-lang="zh">中文</a>
+              {% endif %}
+            </span>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
