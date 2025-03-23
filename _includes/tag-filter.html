@@ -1,0 +1,56 @@
+{% include base_path %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 获取URL参数
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedTag = urlParams.get('tag');
+    
+    if (selectedTag) {
+      // 隐藏所有标签部分
+      const tagSections = document.querySelectorAll('.archive__subtitle');
+      const tagContents = document.querySelectorAll('.archive__item');
+      
+      let foundTag = false;
+      
+      // 遍历所有标签部分
+      tagSections.forEach(function(section) {
+        if (section.id === selectedTag.toLowerCase() || section.textContent.trim() === selectedTag) {
+          section.style.display = 'block';
+          foundTag = true;
+          
+          // 查找该标签下的所有文章
+          let nextElement = section.nextElementSibling;
+          while (nextElement && !nextElement.classList.contains('archive__subtitle')) {
+            if (nextElement.classList.contains('list__item') || 
+                nextElement.classList.contains('grid__item') || 
+                nextElement.parentNode.classList.contains('list__item') || 
+                nextElement.parentNode.classList.contains('grid__item')) {
+              nextElement.style.display = 'block';
+            }
+            nextElement = nextElement.nextElementSibling;
+          }
+        } else {
+          section.style.display = 'none';
+        }
+      });
+      
+      // 如果没有找到标签，则显示一条消息
+      if (!foundTag) {
+        const archive = document.querySelector('.archive');
+        const notFoundMsg = document.createElement('p');
+        notFoundMsg.textContent = 'No posts found with tag: ' + selectedTag;
+        archive.insertBefore(notFoundMsg, archive.firstChild);
+      }
+      
+      // 添加"查看所有标签"链接
+      const archive = document.querySelector('.archive');
+      const viewAllLink = document.createElement('p');
+      viewAllLink.innerHTML = '<a href="{{ base_path }}/tags/">View All Tags</a>';
+      archive.insertBefore(viewAllLink, archive.firstChild);
+      
+      // 更新页面标题
+      document.title = 'Posts tagged with "' + selectedTag + '"';
+    }
+  });
+</script> 
