@@ -4,8 +4,8 @@ date: 2025-03-17
 permalink: /posts/2025/03/xyz-good-domain/
 author_profile: false
 tags:
-  - Domains
-  - Scripts
+  - Domain
+  - Script
 lang: en
 other_lang: /zh/posts/2025/03/xyz-good-domain/
 ---

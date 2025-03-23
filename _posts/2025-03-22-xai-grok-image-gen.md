@@ -8,6 +8,8 @@ tags:
   - xAI
   - Grok
   - Open WebUI
+  - LLM
+  - AI
 lang: en
 other_lang: /zh/posts/2025/03/xai-grok-image-gen/
 ---

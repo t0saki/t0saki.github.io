@@ -7,8 +7,8 @@ tags:
   - Linux
   - Incus
   - LXC
-  - 脚本
-  - 系统监控
+  - Script
+  - System Monitoring
 lang: zh
 other_lang: /posts/2025/03/incus-high-cpu-monitor/
 ---
