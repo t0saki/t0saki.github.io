@@ -347,6 +347,25 @@
   }
 }
 
+/*
+   Language switcher
+   ========================================================================== */
+
+.lang-switcher {
+  display: inline-block;
+  white-space: nowrap;
+  
+  a {
+    display: inline;
+    padding: 0;
+  }
+  
+  .lang-separator {
+    display: inline-block;
+    padding: 0 0.25em;
+  }
+}
+
 .nav__title {
   margin: 0;
   padding: 0.5rem 1rem;

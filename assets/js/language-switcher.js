@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // 为语言切换链接添加点击事件
-  const langLinks = document.querySelectorAll('.masthead__menu-item a[href="/"], .masthead__menu-item a[href="/zh/"]');
+  const langLinks = document.querySelectorAll('.lang-switcher a');
   langLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       // 从链接获取语言
