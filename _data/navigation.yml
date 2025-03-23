@@ -10,3 +10,6 @@ main:
     
   - title: "Project Navigation"
     url: /navigation/
+    
+  - title: "Blog"
+    url: /blog/
