@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // 确保所有下拉菜单默认是关闭的
+  const allDropdowns = document.querySelectorAll('.lang-dropdown');
+  allDropdowns.forEach(dropdown => {
+    dropdown.classList.remove('open');
+  });
+  
   // 检查是否有存储的语言偏好
   const storedLang = localStorage.getItem('preferredLanguage');
   
@@ -25,6 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
       // 保存语言偏好
       localStorage.setItem('preferredLanguage', lang);
       
+      // 关闭下拉菜单
+      const dropdown = this.closest('.lang-dropdown');
+      dropdown.classList.remove('open');
+      
       // 根据当前页面路径跳转到对应语言的页面
       redirectToLanguage(lang);
     });
@@ -39,21 +49,32 @@ document.addEventListener('DOMContentLoaded', function() {
       // 获取父元素
       const dropdown = this.closest('.lang-dropdown');
       
-      // 切换open类
-      dropdown.classList.toggle('open');
-      
-      // 点击外部时关闭下拉菜单
-      const closeDropdown = function(event) {
-        if (!dropdown.contains(event.target)) {
-          dropdown.classList.remove('open');
-          document.removeEventListener('click', closeDropdown);
+      // 关闭所有其他下拉菜单
+      allDropdowns.forEach(otherDropdown => {
+        if (otherDropdown !== dropdown) {
+          otherDropdown.classList.remove('open');
         }
-      };
+      });
       
-      // 添加延迟，避免立即触发
-      setTimeout(() => {
-        document.addEventListener('click', closeDropdown);
-      }, 0);
+      // 切换当前下拉菜单
+      dropdown.classList.toggle('open');
+    });
+  });
+  
+  // 点击页面任何地方关闭下拉菜单
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.lang-dropdown')) {
+      allDropdowns.forEach(dropdown => {
+        dropdown.classList.remove('open');
+      });
+    }
+  });
+  
+  // 阻止下拉菜单内部点击事件冒泡
+  const dropdowns = document.querySelectorAll('.lang-dropdown');
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', function(e) {
+      e.stopPropagation();
     });
   });
 });
