@@ -8,8 +8,6 @@ redirect_from:
 other_lang: /blog/
 ---
 
-{% include tag-filter.html %}
-
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "最近文章" }}</h3>
 
 {% for post in site.posts %}
