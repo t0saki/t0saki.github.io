@@ -5,12 +5,17 @@ author_profile: true
 lang: en
 redirect_from: 
   - /blog.html
+other_lang: /zh/blog/
 ---
+
+<a href="{{ page.other_lang }}" class="btn btn--primary">中文</a>
 
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
 {% for post in site.posts %}
-  {% include archive-single.html %}
+  {% if post.lang == 'en' or post.lang == nil %}
+    {% include archive-single.html %}
+  {% endif %}
 {% endfor %}
 
 <div class="pagination">

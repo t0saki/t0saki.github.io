@@ -1,16 +1,21 @@
 ---
-permalink: /blog-zh/
+permalink: /zh/blog/
 title: "博客"
 author_profile: true
 lang: zh
 redirect_from: 
   - /blog-zh.html
+other_lang: /blog/
 ---
+
+<a href="{{ page.other_lang }}" class="btn btn--primary">English</a>
 
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "最近文章" }}</h3>
 
 {% for post in site.posts %}
-  {% include archive-single.html %}
+  {% if post.lang == 'zh' %}
+    {% include archive-single.html %}
+  {% endif %}
 {% endfor %}
 
 <div class="pagination">

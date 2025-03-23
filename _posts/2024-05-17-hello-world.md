@@ -5,6 +5,8 @@ permalink: /posts/2025/03/hello-world/
 tags:
   - blog
   - welcome
+lang: en
+other_lang: /posts/2025/03/hello-world-zh/
 ---
 
-这是第一篇博客文章，欢迎来到我的博客！
+This is the first blog post, welcome to my blog!
