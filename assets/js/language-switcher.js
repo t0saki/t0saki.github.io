@@ -16,11 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const langLinks = document.querySelectorAll('.lang-switcher a');
   langLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      // 从链接获取语言
-      const lang = this.getAttribute('href').includes('/zh/') ? 'zh' : 'en';
+      // 阻止默认行为，我们要自己处理跳转
+      e.preventDefault();
+      
+      // 从data-lang属性获取语言
+      const lang = this.getAttribute('data-lang');
       
       // 保存语言偏好
       localStorage.setItem('preferredLanguage', lang);
+      
+      // 根据当前页面路径跳转到对应语言的页面
+      redirectToLanguage(lang);
     });
   });
 });

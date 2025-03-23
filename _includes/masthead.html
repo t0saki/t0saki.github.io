@@ -19,9 +19,9 @@
           <!-- 语言切换器 -->
           <li class="masthead__menu-item">
             <span class="lang-switcher">
-              <a href="{{ base_path }}/" {% if page.lang == 'en' or page.lang == nil %}style="font-weight: bold;"{% endif %}>EN</a>
+              <a href="#" data-lang="en" {% if page.lang == 'en' or page.lang == nil %}style="font-weight: bold;"{% endif %}>EN</a>
               <span class="lang-separator"> / </span>
-              <a href="{{ base_path }}/zh/" {% if page.lang == 'zh' %}style="font-weight: bold;"{% endif %}>中文</a>
+              <a href="#" data-lang="zh" {% if page.lang == 'zh' %}style="font-weight: bold;"{% endif %}>中文</a>
             </span>
           </li>
         </ul>
