@@ -330,16 +330,16 @@ category_archive:
   type: liquid
   path: /categories/
 tag_archive:
-  type: jekyll-archives
+  type: liquid
   path: /tags/
 # https://github.com/jekyll/jekyll-archives
-jekyll-archives:
-  enabled:
-    - tags
-  layouts:
-    tag: tag-single
-  permalinks:
-    tag: /tags/:name/
+# jekyll-archives:
+#   enabled:
+#     - tags
+#   layouts:
+#     tag: tag-single
+#   permalinks:
+#     tag: /tags/:name/
 
 
 # HTML Compression
