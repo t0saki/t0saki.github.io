@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // 为语言切换链接添加点击事件
-  const langLinks = document.querySelectorAll('.lang-switcher a');
+  const langLinks = document.querySelectorAll('.dropdown-menu a');
   langLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       // 阻止默认行为，我们要自己处理跳转
@@ -27,6 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // 根据当前页面路径跳转到对应语言的页面
       redirectToLanguage(lang);
+    });
+  });
+  
+  // 防止点击下拉触发器导航
+  const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+  dropdownTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
     });
   });
 });
