@@ -2,6 +2,7 @@
 permalink: /navigation/
 title: "Project Navigation"
 author_profile: true
+lang: en
 redirect_from: 
   - /navigation.html
 ---
