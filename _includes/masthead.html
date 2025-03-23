@@ -16,7 +16,7 @@
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
           
-          <!-- 语言切换器 - 修改为下拉菜单 -->
+          <!-- 语言切换器 - 支持悬浮和点击展示 -->
           <li class="masthead__menu-item lang-dropdown">
             <button type="button" class="dropdown-trigger">
               {% if page.lang == 'zh' %}

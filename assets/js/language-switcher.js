@@ -41,20 +41,15 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // 处理下拉菜单的点击事件
+  // 添加点击事件作为备选交互方式，鼠标悬浮为主要交互方式
   const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
   dropdownTriggers.forEach(trigger => {
     trigger.addEventListener('click', function(e) {
       e.preventDefault();
+      e.stopPropagation();
       
       // 获取父元素
       const dropdown = this.closest('.lang-dropdown');
-      
-      // 关闭所有其他下拉菜单
-      allDropdowns.forEach(otherDropdown => {
-        if (otherDropdown !== dropdown) {
-          otherDropdown.classList.remove('open');
-        }
-      });
       
       // 切换当前下拉菜单
       dropdown.classList.toggle('open');
@@ -68,14 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdown.classList.remove('open');
       });
     }
-  });
-  
-  // 阻止下拉菜单内部点击事件冒泡
-  const dropdowns = document.querySelectorAll('.lang-dropdown');
-  dropdowns.forEach(dropdown => {
-    dropdown.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
   });
 });
 

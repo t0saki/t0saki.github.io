@@ -393,7 +393,7 @@
   }
   
   .dropdown-menu {
-    display: none !important;
+    display: none;
     position: absolute;
     top: 100%;
     right: 0;
@@ -428,9 +428,21 @@
     }
   }
   
+  // 鼠标悬停时显示下拉菜单
+  &:hover {
+    .dropdown-menu {
+      display: block;
+    }
+    
+    .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+  }
+  
+  // 兼容点击显示功能
   &.open {
     .dropdown-menu {
-      display: block !important;
+      display: block;
     }
     
     .dropdown-arrow {
