@@ -348,61 +348,87 @@
 }
 
 /*
-   Language switcher (completely rewritten)
+   Language switcher
    ========================================================================== */
 
-.language-switcher {
+.lang-switcher {
+  display: inline-block;
+  white-space: nowrap;
+  
+  a {
+    display: inline;
+    padding: 0;
+    
+    &:hover {
+      color: $masthead-link-color-hover;
+      text-decoration: none;
+    }
+  }
+  
+  .lang-separator {
+    display: inline-block;
+    padding: 0 0.25em;
+    color: $masthead-link-color;
+  }
+  
+  .current-lang {
+    font-weight: bold;
+    color: $masthead-link-color;
+  }
+}
+
+/* 语言下拉菜单样式 */
+.lang-dropdown {
   position: relative;
   
-  .current-language {
-    display: block;
+  .dropdown-trigger {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: transparent;
     padding: 0.5rem 1rem;
     color: $masthead-link-color;
-    text-decoration: none;
-    white-space: nowrap;
+    font-size: inherit;
+    font-family: inherit;
+    
+    .dropdown-arrow {
+      font-size: 0.7em;
+      margin-left: 5px;
+      transition: transform 0.2s ease;
+    }
     
     &:hover {
       color: $masthead-link-color-hover;
     }
-    
-    &:after {
-      content: " ▼";
-      font-size: 0.7em;
-      vertical-align: middle;
-      margin-left: 0.3em;
-    }
   }
   
-  .language-menu {
-    display: none;
+  .dropdown-menu {
+    display: none !important;
     position: absolute;
     top: 100%;
     right: 0;
-    min-width: 120px;
-    margin: 0;
-    padding: 0.5rem 0;
-    list-style: none;
+    min-width: 150px;
+    margin-top: 5px;
+    padding: 5px 0;
     background-color: #fff;
     border: 1px solid $border-color;
     border-radius: $border-radius;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
     z-index: 10;
     
     li {
-      margin: 0;
-      padding: 0;
       display: block;
+      margin: 0;
       
       a {
         display: block;
-        padding: 0.5rem 1rem;
-        color: $masthead-link-color;
-        text-decoration: none;
+        padding: 8px 15px;
+        margin: 0;
         white-space: nowrap;
         
         &:hover {
           background-color: mix(#fff, $primary-color, 90%);
-          color: $masthead-link-color-hover;
         }
         
         &.active {
@@ -413,13 +439,13 @@
     }
   }
   
-  &:hover {
-    .language-menu {
-      display: block;
+  &.open {
+    .dropdown-menu {
+      display: block !important;
     }
     
-    .current-language:after {
-      content: " ▲";
+    .dropdown-arrow {
+      transform: rotate(180deg);
     }
   }
 }
@@ -442,6 +468,7 @@
   text-transform: uppercase;
   border-bottom: 1px solid $border-color;
 }
+
 
 /*
    Table of contents navigation

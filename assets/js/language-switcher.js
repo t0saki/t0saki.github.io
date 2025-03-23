@@ -1,22 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // 为语言切换链接添加点击事件
-  const languageLinks = document.querySelectorAll('.language-menu a');
-  
-  languageLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // 获取语言代码
-      const lang = this.getAttribute('data-lang');
-      
-      // 保存语言偏好到本地存储
-      localStorage.setItem('preferredLanguage', lang);
-      
-      // 切换到对应语言的页面
-      redirectToLanguage(lang);
-    });
-  });
-  
   // 检查是否有存储的语言偏好
   const storedLang = localStorage.getItem('preferredLanguage');
   
@@ -30,14 +12,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // 点击页面任何地方关闭语言菜单（可选，因为我们主要使用悬浮显示）
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.language-switcher')) {
-      const openMenus = document.querySelectorAll('.language-menu');
-      openMenus.forEach(menu => {
-        menu.style.display = 'none';
-      });
-    }
+  // 为语言切换链接添加点击事件
+  const langLinks = document.querySelectorAll('.lang-switcher a');
+  langLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // 阻止默认行为，我们要自己处理跳转
+      e.preventDefault();
+      
+      // 从data-lang属性获取语言
+      const lang = this.getAttribute('data-lang');
+      
+      // 保存语言偏好
+      localStorage.setItem('preferredLanguage', lang);
+      
+      // 根据当前页面路径跳转到对应语言的页面
+      redirectToLanguage(lang);
+    });
   });
 });
 
