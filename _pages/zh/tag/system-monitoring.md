@@ -2,6 +2,7 @@
 title: "Tag: System Monitoring"
 layout: archive
 permalink: /zh/tags/system-monitoring/
+author_profile: false
 tag: System Monitoring
 lang: zh
 ---

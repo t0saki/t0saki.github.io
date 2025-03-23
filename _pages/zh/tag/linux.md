@@ -2,6 +2,7 @@
 title: "Tag: Linux"
 layout: archive
 permalink: /zh/tags/linux/
+author_profile: false
 tag: Linux
 lang: zh
 ---

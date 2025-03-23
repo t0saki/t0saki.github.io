@@ -2,6 +2,7 @@
 title: "Tag: Grok"
 layout: archive
 permalink: /zh/tags/grok/
+author_profile: false
 tag: Grok
 lang: zh
 ---

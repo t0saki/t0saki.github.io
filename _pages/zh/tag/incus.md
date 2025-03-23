@@ -2,6 +2,7 @@
 title: "Tag: Incus"
 layout: archive
 permalink: /zh/tags/incus/
+author_profile: false
 tag: Incus
 lang: zh
 ---

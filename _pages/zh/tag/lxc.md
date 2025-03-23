@@ -2,6 +2,7 @@
 title: "Tag: LXC"
 layout: archive
 permalink: /zh/tags/lxc/
+author_profile: false
 tag: LXC
 lang: zh
 ---

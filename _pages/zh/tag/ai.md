@@ -2,6 +2,7 @@
 title: "Tag: AI"
 layout: archive
 permalink: /zh/tags/ai/
+author_profile: false
 tag: AI
 lang: zh
 ---

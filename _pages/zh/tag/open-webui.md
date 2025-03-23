@@ -2,6 +2,7 @@
 title: "Tag: Open WebUI"
 layout: archive
 permalink: /zh/tags/open-webui/
+author_profile: false
 tag: Open WebUI
 lang: zh
 ---

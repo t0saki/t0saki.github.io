@@ -2,6 +2,7 @@
 title: "Tag: Domain"
 layout: archive
 permalink: /zh/tags/domain/
+author_profile: false
 tag: Domain
 lang: zh
 ---

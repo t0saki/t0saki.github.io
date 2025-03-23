@@ -2,6 +2,7 @@
 title: "Tag: Cloudflare"
 layout: archive
 permalink: /zh/tags/cloudflare/
+author_profile: false
 tag: Cloudflare
 lang: zh
 ---
