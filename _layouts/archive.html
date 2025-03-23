@@ -12,9 +12,9 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main" {% if page.permalink contains '/blog/' or page.permalink contains '/zh/blog/' or page.permalink contains '/posts/' %}class="no-sidebar"{% endif %}>
-  {% if page.permalink contains '/blog/' or page.permalink contains '/zh/blog/' or page.permalink contains '/posts/' %}
-    <!-- No sidebar for blog pages -->
+<div id="main" role="main" {% if page.permalink contains '/blog/' or page.permalink contains '/zh/blog/' or page.permalink contains '/posts/' or page.layout == 'tag' or page.layout == 'tag-single' %}class="no-sidebar"{% endif %}>
+  {% if page.permalink contains '/blog/' or page.permalink contains '/zh/blog/' or page.permalink contains '/posts/' or page.layout == 'tag' or page.layout == 'tag-single' %}
+    <!-- No sidebar for blog and tag pages -->
   {% else %}
     {% include sidebar.html %}
   {% endif %}
