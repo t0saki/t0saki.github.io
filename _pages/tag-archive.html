@@ -15,16 +15,30 @@ author_profile: true
       {% assign posts = group_items[forloop.index0] %}
       <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
       {% for post in posts %}
-        {% include archive-single.html %}
+        {% if post.lang != 'zh' %}
+          {% include archive-single.html %}
+        {% endif %}
       {% endfor %}
     {% endif %}
   {% endfor %}
 {% else %}
   {% for tag in group_names %}
     {% assign posts = group_items[forloop.index0] %}
-    <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
+    {% assign en_posts = false %}
     {% for post in posts %}
-      {% include archive-single.html %}
+      {% if post.lang != 'zh' %}
+        {% assign en_posts = true %}
+        {% break %}
+      {% endif %}
     {% endfor %}
+    
+    {% if en_posts %}
+      <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
+      {% for post in posts %}
+        {% if post.lang != 'zh' %}
+          {% include archive-single.html %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   {% endfor %}
 {% endif %}

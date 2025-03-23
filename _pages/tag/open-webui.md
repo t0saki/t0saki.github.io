@@ -12,11 +12,13 @@ tag: Open WebUI
   {% if tag == page.tag %}
     {% assign posts = group_items[forloop.index0] %}
     {% for post in posts %}
-      {% include archive-single.html %}
+      {% if post.lang != 'zh' %}
+        {% include archive-single.html %}
+      {% endif %}
     {% endfor %}
   {% endif %}
 {% endfor %}
 
 <div class="pagination">
-  <a href="{{ base_path }}/tags/" class="pagination--pager">查看所有标签</a>
+  <a href="{{ base_path }}/tags/" class="pagination--pager">View All Tags</a>
 </div>
