@@ -2,6 +2,7 @@
 title: "Tag: Domain"
 layout: archive
 permalink: /tags/domain/
+author_profile: false
 tag: Domain
 ---
 

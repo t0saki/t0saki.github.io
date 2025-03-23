@@ -2,6 +2,7 @@
 title: "Tag: xAI"
 layout: archive
 permalink: /tags/xai/
+author_profile: false
 tag: xAI
 ---
 

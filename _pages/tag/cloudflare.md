@@ -2,6 +2,7 @@
 title: "Tag: Cloudflare"
 layout: archive
 permalink: /tags/cloudflare/
+author_profile: false
 tag: Cloudflare
 ---
 

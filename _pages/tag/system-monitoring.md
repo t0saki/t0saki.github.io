@@ -2,6 +2,7 @@
 title: "Tag: System Monitoring"
 layout: archive
 permalink: /tags/system-monitoring/
+author_profile: false
 tag: System Monitoring
 ---
 

@@ -2,6 +2,7 @@
 title: "Tag: Script"
 layout: archive
 permalink: /tags/script/
+author_profile: false
 tag: Script
 ---
 

@@ -57,6 +57,7 @@ def create_tag_page(tag, output_dir, permalink_prefix, lang=None):
         f.write(f"title: \"Tag: {tag}\"\n")
         f.write(f"layout: {tag_layout}\n")
         f.write(f"permalink: {permalink_prefix}{tag.lower().replace(' ', '-')}/\n")
+        f.write(f"author_profile: false\n")
         f.write(f"tag: {tag}\n")
         if lang:
             f.write(f"lang: {lang}\n")

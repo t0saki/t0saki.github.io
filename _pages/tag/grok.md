@@ -2,6 +2,7 @@
 title: "Tag: Grok"
 layout: archive
 permalink: /tags/grok/
+author_profile: false
 tag: Grok
 ---
 
