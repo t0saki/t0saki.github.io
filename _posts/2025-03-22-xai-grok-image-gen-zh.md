@@ -1,7 +1,7 @@
 ---
 title: '使用CF Workers直接让Open WebUI使用xAI的Grok 2 Image图像生成模型'
 date: 2025-03-22
-permalink: /posts/2025/03/xai-grok-image-gen/
+permalink: /zh/posts/2025/03/xai-grok-image-gen/
 tags:
   - Cloudflare
   - xAI

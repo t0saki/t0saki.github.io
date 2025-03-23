@@ -1,7 +1,7 @@
 ---
 permalink: /blog/
 title: "Blog"
-author_profile: true
+author_profile: false
 lang: en
 redirect_from: 
   - /blog.html

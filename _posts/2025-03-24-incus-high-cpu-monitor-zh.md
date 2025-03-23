@@ -1,7 +1,7 @@
 ---
 title: '解决Incus LXC容器导致CPU占用异常高的问题'
 date: 2025-03-24
-permalink: /posts/2025/03/incus-high-cpu-monitor/
+permalink: /zh/posts/2025/03/incus-high-cpu-monitor/
 tags:
   - Linux
   - Incus

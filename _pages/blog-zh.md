@@ -1,10 +1,10 @@
 ---
 permalink: /zh/blog/
 title: "博客"
-author_profile: true
+author_profile: false
 lang: zh
 redirect_from: 
-  - /blog-zh.html
+  - /zh/blog.html
 other_lang: /blog/
 ---
 
