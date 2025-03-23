@@ -348,76 +348,61 @@
 }
 
 /*
-   Language switcher
+   Language switcher (completely rewritten)
    ========================================================================== */
 
-.lang-switcher {
-  display: inline-block;
-  white-space: nowrap;
-  
-  a {
-    display: inline;
-    padding: 0;
-  }
-  
-  .lang-separator {
-    display: inline-block;
-    padding: 0 0.25em;
-  }
-}
-
-/* 语言下拉菜单样式 */
-.lang-dropdown {
+.language-switcher {
   position: relative;
   
-  .dropdown-trigger {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    border: none;
-    background: transparent;
+  .current-language {
+    display: block;
     padding: 0.5rem 1rem;
     color: $masthead-link-color;
-    font-size: inherit;
-    font-family: inherit;
-    
-    .dropdown-arrow {
-      font-size: 0.7em;
-      margin-left: 5px;
-      transition: transform 0.2s ease;
-    }
+    text-decoration: none;
+    white-space: nowrap;
     
     &:hover {
       color: $masthead-link-color-hover;
     }
+    
+    &:after {
+      content: " ▼";
+      font-size: 0.7em;
+      vertical-align: middle;
+      margin-left: 0.3em;
+    }
   }
   
-  .dropdown-menu {
+  .language-menu {
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
-    min-width: 150px;
-    margin-top: 5px;
-    padding: 5px 0;
+    min-width: 120px;
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
     background-color: #fff;
     border: 1px solid $border-color;
     border-radius: $border-radius;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     z-index: 10;
     
     li {
-      display: block;
       margin: 0;
+      padding: 0;
+      display: block;
       
       a {
         display: block;
-        padding: 8px 15px;
-        margin: 0;
+        padding: 0.5rem 1rem;
+        color: $masthead-link-color;
+        text-decoration: none;
         white-space: nowrap;
         
         &:hover {
           background-color: mix(#fff, $primary-color, 90%);
+          color: $masthead-link-color-hover;
         }
         
         &.active {
@@ -428,25 +413,13 @@
     }
   }
   
-  // 鼠标悬停时显示下拉菜单
   &:hover {
-    .dropdown-menu {
+    .language-menu {
       display: block;
     }
     
-    .dropdown-arrow {
-      transform: rotate(180deg);
-    }
-  }
-  
-  // 兼容点击显示功能
-  &.open {
-    .dropdown-menu {
-      display: block;
-    }
-    
-    .dropdown-arrow {
-      transform: rotate(180deg);
+    .current-language:after {
+      content: " ▲";
     }
   }
 }
@@ -469,7 +442,6 @@
   text-transform: uppercase;
   border-bottom: 1px solid $border-color;
 }
-
 
 /*
    Table of contents navigation

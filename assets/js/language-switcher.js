@@ -1,8 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // 确保所有下拉菜单默认是关闭的
-  const allDropdowns = document.querySelectorAll('.lang-dropdown');
-  allDropdowns.forEach(dropdown => {
-    dropdown.classList.remove('open');
+  // 为语言切换链接添加点击事件
+  const languageLinks = document.querySelectorAll('.language-menu a');
+  
+  languageLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // 获取语言代码
+      const lang = this.getAttribute('data-lang');
+      
+      // 保存语言偏好到本地存储
+      localStorage.setItem('preferredLanguage', lang);
+      
+      // 切换到对应语言的页面
+      redirectToLanguage(lang);
+    });
   });
   
   // 检查是否有存储的语言偏好
@@ -18,49 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // 为语言切换链接添加点击事件
-  const langLinks = document.querySelectorAll('.dropdown-menu a');
-  langLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      // 阻止默认行为，我们要自己处理跳转
-      e.preventDefault();
-      
-      // 从data-lang属性获取语言
-      const lang = this.getAttribute('data-lang');
-      
-      // 保存语言偏好
-      localStorage.setItem('preferredLanguage', lang);
-      
-      // 关闭下拉菜单
-      const dropdown = this.closest('.lang-dropdown');
-      dropdown.classList.remove('open');
-      
-      // 根据当前页面路径跳转到对应语言的页面
-      redirectToLanguage(lang);
-    });
-  });
-  
-  // 处理下拉菜单的点击事件
-  // 添加点击事件作为备选交互方式，鼠标悬浮为主要交互方式
-  const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
-  dropdownTriggers.forEach(trigger => {
-    trigger.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      // 获取父元素
-      const dropdown = this.closest('.lang-dropdown');
-      
-      // 切换当前下拉菜单
-      dropdown.classList.toggle('open');
-    });
-  });
-  
-  // 点击页面任何地方关闭下拉菜单
+  // 点击页面任何地方关闭语言菜单（可选，因为我们主要使用悬浮显示）
   document.addEventListener('click', function(e) {
-    if (!e.target.closest('.lang-dropdown')) {
-      allDropdowns.forEach(dropdown => {
-        dropdown.classList.remove('open');
+    if (!e.target.closest('.language-switcher')) {
+      const openMenus = document.querySelectorAll('.language-menu');
+      openMenus.forEach(menu => {
+        menu.style.display = 'none';
       });
     }
   });
