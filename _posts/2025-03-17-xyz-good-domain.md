@@ -1,10 +1,10 @@
 ---
 title: 'Good .XYZ Domains'
-date: 2025-03-24
+date: 2025-03-17
 permalink: /posts/2025/03/xyz-good-domain/
 tags:
-  - blog
-  - welcome
+  - Domains
+  - Scripts
 lang: en
 other_lang: /zh/posts/2025/03/xyz-good-domain/
 ---
