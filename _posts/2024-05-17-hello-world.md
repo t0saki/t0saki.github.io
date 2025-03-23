@@ -6,7 +6,7 @@ tags:
   - blog
   - welcome
 lang: en
-other_lang: /posts/2025/03/hello-world-zh/
+other_lang: /zh/posts/2025/03/hello-world/
 ---
 
 This is the first blog post, welcome to my blog!

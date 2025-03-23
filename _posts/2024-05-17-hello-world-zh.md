@@ -1,7 +1,7 @@
 ---
 title: '你好，世界'
 date: 2025-03-24
-permalink: /posts/2025/03/hello-world-zh/
+permalink: /zh/posts/2025/03/hello-world/
 tags:
   - blog
   - welcome
