@@ -69,7 +69,6 @@ def create_tag_page(tag, output_dir, permalink_prefix, lang=None):
             f.write("{% for tag in group_names %}\n")
             f.write("  {% if tag == page.tag %}\n")
             f.write("    {% assign posts = group_items[forloop.index0] %}\n")
-            f.write("    <h2 id=\"{{ tag | slugify }}\" class=\"archive__subtitle\">{{ tag }}</h2>\n")
             f.write("    {% for post in posts %}\n")
             f.write("      {% if post.lang == page.lang %}\n")
             f.write("        {% include archive-single.html %}\n")
