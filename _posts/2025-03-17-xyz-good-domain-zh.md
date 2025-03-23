@@ -2,6 +2,7 @@
 title: '优质.XYZ域名'
 date: 2025-03-17
 permalink: /zh/posts/2025/03/xyz-good-domain/
+author_profile: false
 tags:
   - Domains
   - Scripts

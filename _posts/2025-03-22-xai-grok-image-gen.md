@@ -2,6 +2,7 @@
 title: 'Using CF Workers to Enable Open WebUI to Directly Use xAI''s Grok 2 Image Generation Model'
 date: 2025-03-22
 permalink: /posts/2025/03/xai-grok-image-gen/
+author_profile: false
 tags:
   - Cloudflare
   - xAI

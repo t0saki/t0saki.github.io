@@ -2,6 +2,7 @@
 title: 'Solving High CPU Usage Issues with Incus LXC Containers'
 date: 2025-03-24
 permalink: /posts/2025/03/incus-high-cpu-monitor/
+author_profile: false
 tags:
   - Linux
   - Incus

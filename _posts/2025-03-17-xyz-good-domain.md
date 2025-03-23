@@ -2,6 +2,7 @@
 title: 'Good .XYZ Domains'
 date: 2025-03-17
 permalink: /posts/2025/03/xyz-good-domain/
+author_profile: false
 tags:
   - Domains
   - Scripts
