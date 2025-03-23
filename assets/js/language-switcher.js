@@ -30,11 +30,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // 防止点击下拉触发器导航
+  // 处理下拉菜单的点击事件
   const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
   dropdownTriggers.forEach(trigger => {
     trigger.addEventListener('click', function(e) {
       e.preventDefault();
+      
+      // 获取父元素
+      const dropdown = this.closest('.lang-dropdown');
+      
+      // 切换open类
+      dropdown.classList.toggle('open');
+      
+      // 点击外部时关闭下拉菜单
+      const closeDropdown = function(event) {
+        if (!dropdown.contains(event.target)) {
+          dropdown.classList.remove('open');
+          document.removeEventListener('click', closeDropdown);
+        }
+      };
+      
+      // 添加延迟，避免立即触发
+      setTimeout(() => {
+        document.addEventListener('click', closeDropdown);
+      }, 0);
     });
   });
 });

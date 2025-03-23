@@ -18,13 +18,17 @@
           
           <!-- 语言切换器 - 修改为下拉菜单 -->
           <li class="masthead__menu-item lang-dropdown">
-            <a href="#" class="dropdown-trigger">
-              {% if page.lang == 'zh' %}中文{% else %}EN{% endif %}
+            <button type="button" class="dropdown-trigger">
+              {% if page.lang == 'zh' %}
+                <span>语言</span>
+              {% else %}
+                <span>Language</span>
+              {% endif %}
               <span class="dropdown-arrow">▼</span>
-            </a>
+            </button>
             <ul class="dropdown-menu">
-              <li><a href="#" data-lang="en" {% if page.lang == 'en' or page.lang == nil %}class="active"{% endif %}>EN</a></li>
-              <li><a href="#" data-lang="zh" {% if page.lang == 'zh' %}class="active"{% endif %}>中文</a></li>
+              <li><a href="#" data-lang="en" {% if page.lang == 'en' or page.lang == nil %}class="active"{% endif %}>English</a></li>
+              <li><a href="#" data-lang="zh" {% if page.lang == 'zh' %}class="active"{% endif %}>中文 (Chinese)</a></li>
             </ul>
           </li>
         </ul>

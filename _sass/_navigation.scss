@@ -374,11 +374,21 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    border: none;
+    background: transparent;
+    padding: 0.5rem 1rem;
+    color: $masthead-link-color;
+    font-size: inherit;
+    font-family: inherit;
     
     .dropdown-arrow {
       font-size: 0.7em;
       margin-left: 5px;
       transition: transform 0.2s ease;
+    }
+    
+    &:hover {
+      color: $masthead-link-color-hover;
     }
   }
   
@@ -387,7 +397,7 @@
     position: absolute;
     top: 100%;
     right: 0;
-    min-width: 120px;
+    min-width: 150px;
     margin-top: 5px;
     padding: 5px 0;
     background-color: #fff;
@@ -418,7 +428,7 @@
     }
   }
   
-  &:hover {
+  &.open {
     .dropdown-menu {
       display: block;
     }
