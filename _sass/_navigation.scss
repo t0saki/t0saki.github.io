@@ -356,8 +356,9 @@
   white-space: nowrap;
   
   a {
-    display: inline;
-    padding: 0;
+    display: inline !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   
   .lang-separator {

@@ -22,10 +22,12 @@
           {% endfor %}
           <!-- 语言切换器 -->
           <li class="masthead__menu-item">
-            <span class="lang-switcher" style="white-space: nowrap; display: inline-block;">
-              <a href="#" data-lang="en" {% if page.lang=='en' or page.lang==nil %}style="font-weight: bold;" {% endif %}>EN</a>
+            <span class="lang-switcher">
+              <a href="#" onclick="return switchToLang('en');" data-lang="en" {% if page.lang=='en' or page.lang==nil
+                %}style="font-weight: bold;" {% endif %}>EN</a>
               <span class="lang-separator"> / </span>
-              <a href="#" data-lang="zh" {% if page.lang=='zh' %}style="font-weight: bold;" {% endif %}>中文</a>
+              <a href="#" onclick="return switchToLang('zh');" data-lang="zh" {% if page.lang=='zh' %}style="font-weight: bold;" {%
+                endif %}>中文</a>
             </span>
           </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
