@@ -7,9 +7,6 @@
         <button>
           <div class="navicon"></div>
         </button>
-        <button>
-          <div class="navicon"></div>
-        </button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
           {% for link in site.data.navigation.main %}
@@ -23,10 +20,10 @@
 
           <!-- 语言切换器 -->
           <li class="masthead__menu-item">
-            <span class="lang-switcher">
-              <a href="#" data-lang="en" {% if page.lang=='en' or page.lang==nil %}style="font-weight: bold;" {% endif %}>EN</a>
-              <span class="lang-separator"> / </span>
-              <a href="#" data-lang="zh" {% if page.lang=='zh' %}style="font-weight: bold;" {% endif %}>中文</a>
+            <span class="lang-switcher" style="display: flex; align-items: center;">
+              <a href="#" data-lang="en" {% if page.lang=='en' or page.lang==nil %}style="font-weight: bold;" {% endif %} onclick="return switchToLang('en')">EN</a>
+              <span class="lang-separator" style="margin: 0 0px;">/</span>
+              <a href="#" data-lang="zh" {% if page.lang=='zh' %}style="font-weight: bold;" {% endif %} onclick="return switchToLang('zh')">中文</a>
             </span>
           </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
