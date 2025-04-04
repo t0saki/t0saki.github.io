@@ -2,7 +2,7 @@
 
 /* Main blog container */
 .no-sidebar {
-  max-width: 100% !important;
+  /* max-width: 925px !important; */
   margin: 0 auto;
   padding-left: 2em !important;
   padding-right: 2em !important;
@@ -36,7 +36,7 @@
 @media (min-width: 64em) {
   /* Main blog container */
   .no-sidebar {
-    max-width: 100% !important;
+    max-width: 925px !important;
     margin: 0 auto;
     padding-left: 2em !important;
     padding-right: 2em !important;
