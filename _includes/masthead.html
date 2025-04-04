@@ -20,19 +20,18 @@
             {% endif %}
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
-          <!-- Language Switcher -->
-          <li class="masthead__menu-item lang-switcher-container">
-            <a href="#" id="lang-switcher-button" title="Switch Language">
-              <i class="fas fa-globe" aria-hidden="true"></i> <!-- Using Font Awesome Globe icon -->
-            </a>
-            <ul class="lang-dropdown hidden"> <!-- Start hidden -->
-              <li><a href="#" onclick="switchToLang('en'); return false;" {% if page.lang=='en' or page.lang==nil
-                  %}style="font-weight: bold;" {% endif %}>EN</a></li>
-              <li><a href="#" onclick="switchToLang('zh'); return false;" {% if page.lang=='zh' %}style="font-weight: bold;" {%
-                  endif %}>中文</a></li>
-            </ul>
+          <!-- 语言切换器 -->
+          <li class="masthead__menu-item">
+            <div class="lang-switcher">
+              <a href="#" class="lang-trigger">
+                <i class="fas fa-globe"></i>
+              </a>
+              <div class="lang-dropdown">
+                <a href="#" data-lang="en" {% if page.lang=='en' or page.lang==nil %}class="active"{% endif %}>English</a>
+                <a href="#" data-lang="zh" {% if page.lang=='zh' %}class="active"{% endif %}>中文</a>
+              </div>
+            </div>
           </li>
-          <!-- End Language Switcher -->
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
           </li>
@@ -59,30 +58,8 @@
     }
 
     localStorage.setItem('preferredLanguage', lang);
-        // No return false here, onclick handles it
-      }
-
-      // Dropdown toggle logic
-      document.addEventListener('DOMContentLoaded', function () {
-        const langButton = document.getElementById('lang-switcher-button');
-        const langDropdown = document.querySelector('.lang-dropdown');
-
-        if (langButton && langDropdown) {
-          langButton.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default anchor behavior
-            event.stopPropagation(); // Prevent click from immediately propagating to document
-            langDropdown.classList.toggle('hidden'); // Toggle visibility
-          });
-
-          // Close dropdown if clicking outside
-          document.addEventListener('click', function (event) {
-            // Hide if click is outside the button and the dropdown itself
-            if (!langButton.contains(event.target) && !langDropdown.contains(event.target)) {
-              langDropdown.classList.add('hidden');
-            }
-          });
-        }
-  });
+    return false;
+  }
 </script>
 </div>
 </div>

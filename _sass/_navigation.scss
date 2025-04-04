@@ -351,8 +351,6 @@
    Language switcher
    ========================================================================== */
 
-// Remove or comment out the old styles if they exist
-/*
 .lang-switcher {
   display: inline-block;
   white-space: nowrap;
@@ -366,86 +364,6 @@
     display: inline-block;
     padding: 0 0.05em;
     margin: 0 0.05em;
-  }
-}
-*/
-
-// New styles for the dropdown language switcher
-.lang-switcher-container {
-  position: relative; // Needed for absolute positioning of the dropdown
-
-  .lang-dropdown {
-    position: absolute;
-    top: 100%; // Position below the icon
-    right: 0; // Align to the right of the container
-    margin-top: 10px; // Space between icon and dropdown
-    padding: 5px 0; // Padding inside the dropdown
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    background: $background-color; // Use site background color
-    box-shadow: $box-shadow; // Use global box shadow
-    z-index: 100; // Ensure it appears above other elements
-    min-width: 80px; // Minimum width
-    list-style: none;
-
-    &.hidden {
-      display: none; // Hide the dropdown by default
-    }
-
-    li {
-      display: block;
-
-      a {
-        display: block;
-        padding: 8px 15px; // Padding for links
-        margin: 0; // Reset margin
-        white-space: nowrap; // Prevent wrapping
-        font-size: $type-size-6; // Adjust font size if needed
-        color: $masthead-link-color; // Use masthead link color
-
-        &:hover {
-          background-color: mix(#000, $background-color, 10%); // Subtle hover effect
-          color: $masthead-link-color-hover; // Use hover color
-          text-decoration: none; // Remove underline on hover if present
-        }
-
-        &:before { // Remove the underline animation from greedy-nav if inherited
-          display: none;
-        }
-      }
-      // Add a slight border between items if desired
-      // border-bottom: 1px solid $border-color;
-      // &:last-child {
-      //   border-bottom: none;
-      // }
-    }
-
-    // Optional: Add an arrow pointing upwards to the dropdown
-    // &:before {
-    //   content: "";
-    //   position: absolute;
-    //   top: -11px;
-    //   right: 10px;
-    //   width: 0;
-    //   border-style: solid;
-    //   border-width: 0 10px 10px;
-    //   border-color: $border-color transparent;
-    //   display: block;
-    //   z-index: 0;
-    // }
-
-    // &:after {
-    //   content: "";
-    //   position: absolute;
-    //   top: -10px;
-    //   right: 10px;
-    //   width: 0;
-    //   border-style: solid;
-    //   border-width: 0 10px 10px;
-    //   border-color: $background-color transparent;
-    //   display: block;
-    //   z-index: 1;
-    // }
   }
 }
 
