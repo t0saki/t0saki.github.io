@@ -8,6 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
+site_theme               : "default"
 title                    : "tosaki's home"
 title_separator          : "-"
 name                     : &name "Wu Zhengxiao"
