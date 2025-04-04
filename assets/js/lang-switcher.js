@@ -45,11 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentPath = window.location.pathname;
         const needsRedirect = (detectedLang === 'zh' && !currentPath.startsWith('/zh/')) ||
                               (detectedLang === 'en' && currentPath.startsWith('/zh/'));
-
+        localStorage.setItem('preferredLanguage', detectedLang); // Just store preference
         if (needsRedirect) {
            switchToLang(detectedLang); // This will redirect and store
         } else {
-           localStorage.setItem('preferredLanguage', detectedLang); // Just store preference
            // Optionally update the bold style on the links
            document.querySelectorAll('.lang-switcher a[data-lang]').forEach(a => {
               if (a.getAttribute('data-lang') === detectedLang) {
@@ -60,15 +59,24 @@ document.addEventListener('DOMContentLoaded', function() {
            });
         }
     } else {
-        // Optional: Ensure the correct link is bold based on stored preference
-        // This might already be handled by Jekyll/Liquid based on page.lang
-        document.querySelectorAll('.lang-switcher a[data-lang]').forEach(a => {
-           if (a.getAttribute('data-lang') === storedLang) {
-             a.style.fontWeight = 'bold';
-           } else {
-             a.style.fontWeight = 'normal';
-           }
-        });
+        // Check if the current URL path matches the stored preference
+        const currentPath = window.location.pathname;
+        const needsRedirect = (storedLang === 'zh' && !currentPath.startsWith('/zh/')) ||
+                              (storedLang === 'en' && currentPath.startsWith('/zh/'));
+
+        if (needsRedirect) {
+            switchToLang(storedLang); // Redirect if the path doesn't match the preference
+        } else {
+            // Optional: Ensure the correct link is bold based on stored preference
+            // This might already be handled by Jekyll/Liquid based on page.lang
+            document.querySelectorAll('.lang-switcher a[data-lang]').forEach(a => {
+               if (a.getAttribute('data-lang') === storedLang) {
+                 a.style.fontWeight = 'bold';
+               } else {
+                 a.style.fontWeight = 'normal';
+               }
+            });
+        }
     }
 
     // theme
