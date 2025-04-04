@@ -4,17 +4,30 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
+        <button>
+          <div class="navicon"></div>
+        </button>
+        <button>
+          <div class="navicon"></div>
+        </button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
-              {% assign domain = '' %}
+            {% assign domain = '' %}
             {% else %}
-              {% assign domain = base_path %}
+            {% assign domain = base_path %}
             {% endif %}
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
+          <!-- 语言切换器 -->
+          <li class="masthead__menu-item">
+            <span class="lang-switcher">
+              <a href="#" data-lang="en" {% if page.lang=='en' or page.lang==nil %}style="font-weight: bold;" {% endif %}>EN</a>
+              <span class="lang-separator"> / </span>
+              <a href="#" data-lang="zh" {% if page.lang=='zh' %}style="font-weight: bold;" {% endif %}>中文</a>
+            </span>
+          </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
           </li>
@@ -23,4 +36,26 @@
       </nav>
     </div>
   </div>
+<script>
+  // 内联的语言切换函数，确保即使外部脚本未加载也能工作
+  function switchToLang(lang) {
+    console.log('Inline switch to language:', lang);
+
+    var currentPath = window.location.pathname;
+    var newPath;
+
+    if (lang === 'zh' && !currentPath.startsWith('/zh/')) {
+      newPath = currentPath === '/' || currentPath === '' ? '/zh/' : '/zh' + currentPath;
+      window.location.href = newPath;
+    }
+    else if (lang === 'en' && currentPath.startsWith('/zh/')) {
+      newPath = currentPath.replace('/zh/', '/');
+      window.location.href = newPath;
+    }
+
+    localStorage.setItem('preferredLanguage', lang);
+    return false;
+  }
+</script>
+</div>
 </div>

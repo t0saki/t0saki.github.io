@@ -1,0 +1,29 @@
+---
+layout: archive
+---
+
+{% include base_path %}
+
+<div id="main" role="main">
+  <!-- Sidebar is managed in archive layout -->
+
+  <div class="archive">
+    <h1 id="page-title" class="page__title">{{ page.title }}</h1>
+    
+    {% if page.lang %}
+      {% for post in site.tags[page.tag] %}
+        {% if post.lang == page.lang %}
+          {% include archive-single.html %}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% for post in site.tags[page.tag] %}
+        {% include archive-single.html %}
+      {% endfor %}
+    {% endif %}
+    
+    <div class="pagination">
+      <a href="{{ base_path }}/tags/" class="pagination--pager">查看所有标签</a>
+    </div>
+  </div>
+</div> 

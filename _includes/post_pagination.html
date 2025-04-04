@@ -2,13 +2,50 @@
 
 {% if page.previous or page.next %}
   <nav class="pagination">
-    {% if page.previous %}
-      <a href="{{ base_path }}{{ page.previous.url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+    {% assign found_prev = false %}
+    {% assign prev_post = page.previous %}
+    
+    {% if prev_post %}
+      {% if prev_post.lang == page.lang %}
+        {% assign found_prev = true %}
+      {% else %}
+        {% for post in site.posts %}
+          {% if post.date < page.date and post.lang == page.lang %}
+            {% unless found_prev %}
+              {% assign prev_post = post %}
+              {% assign found_prev = true %}
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+    
+    {% if found_prev %}
+      <a href="{{ base_path }}{{ prev_post.url }}" class="pagination--pager" title="{{ prev_post.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
     {% else %}
       <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
     {% endif %}
-    {% if page.next %}
-      <a href="{{ base_path }}{{ page.next.url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+    
+    {% assign found_next = false %}
+    {% assign next_post = page.next %}
+    
+    {% if next_post %}
+      {% if next_post.lang == page.lang %}
+        {% assign found_next = true %}
+      {% else %}
+        {% for post in site.posts reversed %}
+          {% if post.date > page.date and post.lang == page.lang %}
+            {% unless found_next %}
+              {% assign next_post = post %}
+              {% assign found_next = true %}
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+    
+    {% if found_next %}
+      <a href="{{ base_path }}{{ next_post.url }}" class="pagination--pager" title="{{ next_post.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
     {% else %}
       <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
     {% endif %}

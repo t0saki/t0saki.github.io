@@ -47,7 +47,6 @@ $(document).ready(function () {
       bumpIt();
     }
   }, 250);
-
   // FitVids init
   fitvids();
 

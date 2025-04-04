@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# 获取仓库根目录
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+echo "Running tag generator before commit..."
+python3 "$REPO_ROOT/_pages/tag_generator.py"
+
+# 如果标签生成器创建或修改了文件，将它们添加到本次提交
+git add "$REPO_ROOT/_pages/tag/"
+git add "$REPO_ROOT/_pages/zh/tag/"
+
+# 返回成功，允许提交继续
+exit 0 

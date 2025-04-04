@@ -12,8 +12,12 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main">
-  {% include sidebar.html %}
+<div id="main" role="main" {% if page.permalink contains '/blog/' or page.permalink contains '/zh/blog/' or page.permalink contains '/posts/' or page.permalink contains '/tags/' or page.permalink contains '/zh/tags/' or page.layout == 'tag' or page.layout == 'tag-single' %}class="no-sidebar"{% endif %}>
+  {% if page.permalink contains '/blog/' or page.permalink contains '/zh/blog/' or page.permalink contains '/posts/' or page.permalink contains '/tags/' or page.permalink contains '/zh/tags/' or page.layout == 'tag' or page.layout == 'tag-single' %}
+    <!-- No sidebar for blog, tag pages, and tags index -->
+  {% else %}
+    {% include sidebar.html %}
+  {% endif %}
 
   <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}

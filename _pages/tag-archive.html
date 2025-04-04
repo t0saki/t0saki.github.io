@@ -2,16 +2,43 @@
 layout: archive
 permalink: /tags/
 title: "Posts by Tags"
-author_profile: true
+author_profile: false
 ---
 
 {% include base_path %}
 {% include group-by-array collection=site.posts field="tags" %}
 
-{% for tag in group_names %}
-  {% assign posts = group_items[forloop.index0] %}
-  <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
-  {% for post in posts %}
-    {% include archive-single.html %}
+{% assign filtered_tag = include.tag | default: page.tag | default: site.tag %}
+{% if filtered_tag and filtered_tag != "" %}
+  {% for tag in group_names %}
+    {% if tag == filtered_tag %}
+      {% assign posts = group_items[forloop.index0] %}
+      <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
+      {% for post in posts %}
+        {% if post.lang != 'zh' %}
+          {% include archive-single.html %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   {% endfor %}
-{% endfor %}
+{% else %}
+  {% for tag in group_names %}
+    {% assign posts = group_items[forloop.index0] %}
+    {% assign en_posts = false %}
+    {% for post in posts %}
+      {% if post.lang != 'zh' %}
+        {% assign en_posts = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if en_posts %}
+      <h2 id="{{ tag | slugify }}" class="archive__subtitle">{{ tag }}</h2>
+      {% for post in posts %}
+        {% if post.lang != 'zh' %}
+          {% include archive-single.html %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

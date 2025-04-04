@@ -1,0 +1,68 @@
+/* Custom styles for full-width blog display */
+
+/* Main blog container */
+.no-sidebar {
+  max-width: 925px !important;
+  margin: 0 auto;
+  padding-left: 2em !important;
+  padding-right: 2em !important;
+}
+
+/* Blog page content */
+.no-sidebar .page {
+  float: none;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Archive items (blog posts) */
+.no-sidebar .archive,
+.no-sidebar .archive__item,
+.no-sidebar .list__item {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Fix for blog posts to use full width */
+.no-sidebar .page__inner-wrap {
+  width: 100%;
+}
+
+/* Custom styles for blog display with standard container width */
+@media (min-width: 64em) {
+  /* Main blog container */
+  .no-sidebar {
+    max-width: 925px !important;
+    margin: 0 auto;
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+  }
+  
+  /* Blog page content */
+  .no-sidebar .page {
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  /* Archive items (blog posts) */
+  .no-sidebar .archive,
+  .no-sidebar .archive__item,
+  .no-sidebar .list__item {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  /* Fix for blog posts to use container width */
+  .no-sidebar .page__inner-wrap {
+    width: 100%;
+  }
+} 
