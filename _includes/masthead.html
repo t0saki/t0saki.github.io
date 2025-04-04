@@ -20,19 +20,14 @@
             {% endif %}
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
+
           <!-- 语言切换器 -->
-          <li class="masthead__menu-item lang-switcher-item">
-            <div class="lang-switcher">
-              <a href="#" class="lang-trigger" aria-label="Language Switcher" title="Language Switcher">
-                <i class="fas fa-globe"></i>
-              </a>
-              <div class="lang-dropdown">
-                <a href="#" data-lang="en" {% if page.lang=='en' or page.lang==nil %}class="active" {% endif %}
-                  onclick="switchToLang('en'); return false;">English</a>
-                <a href="#" data-lang="zh" {% if page.lang=='zh' %}class="active" {% endif %}
-                  onclick="switchToLang('zh'); return false;">中文</a>
-              </div>
-            </div>
+          <li class="masthead__menu-item">
+            <span class="lang-switcher">
+              <a href="#" data-lang="en" {% if page.lang=='en' or page.lang==nil %}style="font-weight: bold;" {% endif %}>EN</a>
+              <span class="lang-separator"> / </span>
+              <a href="#" data-lang="zh" {% if page.lang=='zh' %}style="font-weight: bold;" {% endif %}>中文</a>
+            </span>
           </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
@@ -42,85 +37,27 @@
       </nav>
     </div>
   </div>
-<script>
-  // 内联的语言切换函数，确保即使外部脚本未加载也能工作
-  function switchToLang(lang) {
-    console.log('Inline switch to language:', lang);
 
-    var currentPath = window.location.pathname;
-    var newPath;
-    var baseUrl = "{{ site.baseurl | default: '' }}"; // Get baseurl
+    <script>
+      // 内联的语言切换函数，确保即使外部脚本未加载也能工作
+      function switchToLang(lang) {
+        console.log('Inline switch to language:', lang);
 
-    // Adjust base path logic if baseurl is present
-    var basePathWithoutBaseUrl = currentPath.startsWith(baseUrl) ? currentPath.substring(baseUrl.length) : currentPath;
+        var currentPath = window.location.pathname;
+        var newPath;
 
-    if (lang === 'zh' && !basePathWithoutBaseUrl.startsWith('/zh/')) {
-      newPath = basePathWithoutBaseUrl === '/' || basePathWithoutBaseUrl === '' ? baseUrl + '/zh/' : baseUrl + '/zh' + basePathWithoutBaseUrl;
-    }
-    else if (lang === 'en' && basePathWithoutBaseUrl.startsWith('/zh/')) {
-      newPath = baseUrl + basePathWithoutBaseUrl.replace('/zh/', '/');
-      // Handle case where replacing /zh/ results in double slash like //about
-      if (newPath.startsWith(baseUrl + '//')) {
-        newPath = baseUrl + newPath.substring(baseUrl.length + 1);
-      }
-      // Handle case where the root path becomes empty after removing /zh/
-      if (newPath === baseUrl + '/' && basePathWithoutBaseUrl === '/zh/') {
-        newPath = baseUrl + '/'; // Ensure root path is correct
-      }
-    } else {
-      // Language is already correct or no change needed
-      console.log('No path change needed or already correct language.');
-      localStorage.setItem('preferredLanguage', lang); // Still save preference
-      // Update active class without reload if path doesn't change
-      document.querySelectorAll('.lang-dropdown a').forEach(a => {
-        if (a.getAttribute('data-lang') === lang) {
-          a.classList.add('active');
-        } else {
-          a.classList.remove('active');
+        if (lang === 'zh' && !currentPath.startsWith('/zh/')) {
+          newPath = currentPath === '/' || currentPath === '' ? '/zh/' : '/zh' + currentPath;
+          window.location.href = newPath;
         }
-      });
-      return false;
-    }
-
-    if (newPath !== undefined) {
-      console.log('Redirecting to:', newPath);
-      window.location.href = newPath;
-    }
-
-    localStorage.setItem('preferredLanguage', lang);
-        return false; // Prevent default link behavior
-      }
-
-      // Dropdown toggle logic
-      document.addEventListener('DOMContentLoaded', function () {
-        const langTrigger = document.querySelector('.lang-trigger');
-        const langDropdown = document.querySelector('.lang-dropdown');
-        const langSwitcherItem = document.querySelector('.lang-switcher-item'); // Get the parent li
-
-        if (langTrigger && langDropdown && langSwitcherItem) {
-          langTrigger.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default anchor behavior
-            event.stopPropagation(); // Prevent click from immediately closing dropdown
-            langDropdown.classList.toggle('is-visible');
-          });
-
-          // Close dropdown if clicked outside
-          document.addEventListener('click', function (event) {
-            // Check if the click was outside the lang switcher item
-            if (!langSwitcherItem.contains(event.target)) {
-              langDropdown.classList.remove('is-visible');
-            }
-          });
+        else if (lang === 'en' && currentPath.startsWith('/zh/')) {
+          newPath = currentPath.replace('/zh/', '/');
+          window.location.href = newPath;
         }
 
-        // Optional: Apply preferred language on load if not handled by Jekyll logic
-        const preferredLang = localStorage.getItem('preferredLanguage');
-        if (preferredLang) {
-          // Logic to potentially set active class based on localStorage
-          // This might conflict with Jekyll's page.lang logic, use with caution
-          // console.log('Preferred language from localStorage:', preferredLang);
-        }
-  });
+        localStorage.setItem('preferredLanguage', lang);
+        return false;
+      }
 </script>
-</div>
+  </div>
 </div>

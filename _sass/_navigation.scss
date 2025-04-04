@@ -352,7 +352,6 @@
    ========================================================================== */
 
 .lang-switcher {
-  position: relative;
   display: inline-block;
   white-space: nowrap;
   
@@ -454,53 +453,3 @@
     }
   }
 }
-
-
-.lang-dropdown {
-  /* display: none !important; Force hide by default */
-  display: none; /* Hide by default, controlled by JS */
-  position: absolute;
-  /* Position relative to the li.masthead__menu-item */
-  top: 100%; /* Position below the parent */
-  right: 0; /* Align to the right of the parent */
-  min-width: 100px; /* Add minimum width */
-  background: var(--background-color); /* Use CSS variable */
-  border: 1px solid var(--border-color); /* Use CSS variable */
-  border-radius: $border-radius; /* Use variable */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 100;
-  margin-top: 5px; /* Add some space between trigger and dropdown */
-
-
-  a {
-    display: block;
-    padding: 0.5rem 1rem;
-    white-space: nowrap;
-    color: var(--text-color); /* Use CSS variable */
-    text-align: center; /* Center text */
-    text-decoration: none; /* Remove underline */
-
-
-    &:hover {
-      background-color: var(--lighter-gray); /* Use CSS variable */
-      color: var(--link-color-hover); /* Use CSS variable */
-    }
-
-    &.active {
-      font-weight: bold;
-      color: var(--primary-color); /* Use CSS variable */
-    }
-  }
-}
-
-/* Show dropdown when the is-visible class is added */
-.lang-dropdown.is-visible {
-  /* display: block !important; Force show on hover */
-  display: block;
-}
-
-/* Remove the hover rule */
-/* Show on hover - Target the dropdown directly */
-/* &:hover > .lang-dropdown {
-  display: block !important; /* Force show on hover */
-/* } */
