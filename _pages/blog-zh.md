@@ -8,6 +8,8 @@ redirect_from:
 other_lang: /blog/
 ---
 
+有部分文章可能使用了LLM(大部分为DeepSeek V3)进行润色，请谨慎阅读。
+
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "最近文章" }}</h3>
 
 {% for post in site.posts %}

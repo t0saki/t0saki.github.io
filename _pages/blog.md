@@ -8,6 +8,8 @@ redirect_from:
 other_lang: /zh/blog/
 ---
 
+Most articles are originally written in Chinese and translated and polished using LLMs (mostly DeepSeek V3). If you find the translation confusing, please refer to the original Chinese version.
+
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
 {% for post in site.posts %}
