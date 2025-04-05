@@ -1,6 +1,6 @@
 ---
 permalink: /zh/navigation/
-title: "项目导航"
+title: "自托管服务"
 author_profile: true
 lang: zh
 redirect_from: 
