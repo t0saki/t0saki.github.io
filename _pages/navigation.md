@@ -1,6 +1,6 @@
 ---
 permalink: /navigation/
-title: "Project Navigation"
+title: "Self-Hosted"
 author_profile: true
 lang: en
 redirect_from: 
