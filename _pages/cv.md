@@ -26,6 +26,7 @@ BSc(Eng) Telecommunications Engineering with Management (Multimedia Track) | Ful
 
 **Alibaba** | *May 2025 – September 2025 (expected)*
 Taotian - Alimama - Advertising Technology Prediction Engine - Development Intern | Beijing
+* Inference acceleration.
 
 **Luchen Technology Co. Ltd.** | *Jan. 2025 – Apr. 2025*  
 Luchentech (Colossal-AI) - HPC-AI Cloud - Cloud Platform Developer Intern | Singapore
