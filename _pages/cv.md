@@ -24,7 +24,7 @@ BSc(Eng) Telecommunications Engineering with Management (Multimedia Track) | Ful
 
 ## Work Experience
 
-**Alibaba** | *May 2025 – September 2025 (expected)*
+**Alibaba** | *May 2025 – September 2025 (expected)*  
 Taotian - Alimama - Advertising Technology Prediction Engine - Development Intern | Beijing
 * Inference acceleration.
 
