@@ -13,7 +13,7 @@ redirect_from:
 
 ## Education
 
-**National University of Singapore** | *Aug. 2024 – Dec. 2025 (expected)*  
+**National University of Singapore** | *Aug. 2024 – Dec. 2025*  
 Master of Computing (General Track) | Full-time | Singapore
 * GPA 4.75/5, Relevant coursework includes: Computer Systems and Applications, Data Structures and Algorithms, Database Design and Programming, Parallel and Distributed Algorithms, etc.
 * NUS MComp Capstone Project, available for full-time credit-bearing internship from May to Sept 2025.
@@ -23,6 +23,9 @@ BSc(Eng) Telecommunications Engineering with Management (Multimedia Track) | Ful
 * Grade 88/100 (Top 20%). Relevant coursework includes: Advanced Programming in C (96), Data Structures (91), Software Engineering (91), Internet Applications (92), Neural Networks and Deep Learning (92), etc.
 
 ## Work Experience
+
+**Alibaba** | *May 2025 – September 2025 (estimated)*
+Taotian - Alimama - Advertising Technology Prediction Engine - Development Intern | Beijing
 
 **Luchen Technology Co. Ltd.** | *Jan. 2025 – Apr. 2025 (expected)*  
 Luchentech (Colossal-AI) - HPC-AI Cloud - Cloud Platform Developer Intern | Singapore
