@@ -9,6 +9,7 @@ tags:
   - System Monitoring
   - HomeLab
   - Energy Saving
+  - Router
 lang: zh
 other_lang: /posts/2025/04/homelab-power/
 ---
