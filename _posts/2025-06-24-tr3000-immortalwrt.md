@@ -28,4 +28,4 @@ Initially, I wanted to try the `ubootmod` version adapted for the TR3000 by Immo
 
 Flashing a `ubootmod` device back to a standard one has a little pitfall. You need to write to the FIP partition, but the firmware mentioned in the tutorials for writing to the FIP partition only works on the standard (non-`ubootmod`) devices. I documented the solution [here](https://www.right.com.cn/forum/thread-8433045-1-1.html) (in Chinese). In short, you build the firmware with the `kmod-mtd-rw` package included, and then unlock the partition using `insmod mtd-rw.ko i_want_a_brick=1`.
 
-So far, I'm quite satisfied with it. I haven't encountered any stability issues yet. Running certain applications, including encryption/decryption overhead, I can get speeds of 500Mbps+. Anything higher is likely limited by my current internet bandwidth.
+So far, I'm quite satisfied with it. I haven't encountered any stability issues yet. Running proxy applications, including encryption/decryption overhead, I can get speeds of 500Mbps+. Anything higher is likely limited by my current internet bandwidth.
