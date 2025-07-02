@@ -18,7 +18,7 @@ However, I recently moved into a rented apartment, and my need for an open route
 
 After some searching, I settled on the Cudy TR3000 (this is not an ad, though I wish I were getting paid for one). The main factors were its small size and "good enough" specs. I had previously been tempted by the very similar MT3000, which uses the same hardware solution, but was scared off by its high price. In contrast, this device costs only 123 RMB, which is quite cheap for an AX3000 router, and it doesn't have the "miniaturization premium." As for the downsides, the single 2.5G port is a bit odd (you'd need at least two for them to be truly useful, but I don't need it anyway), and the specs—a dual-core A53 CPU and 128MB of storage—are really just "good enough."
 
-![jd-order.png](https://i.tsk.im/file/BzFuKFF7.png)![photo.JPG](https://i.tsk.im/file/qCoJTKji.jpg)
+![jd-order.png](https://i.tsk.im/file/BzFuKFF7.png)![photo.JPG](https://i.tsk.im/file/O7cAqVxC.jpeg)
 
 Cudy seems to be a savvy company. After someone on the OpenWrt Forum adapted the firmware for the TR3000 and contacted them, Cudy released a signed unlocking firmware. The specific steps can be found [here](https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8411618) (in Chinese), and the U-Boot to use is [this one](https://www.right.com.cn/forum/thread-8415351-1-1.html) (in Chinese).
 

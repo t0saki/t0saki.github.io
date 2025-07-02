@@ -18,7 +18,7 @@ other_lang: /posts/2025/06/tr3000-immortalwrt/
 
 经过一番挑选，最后还是选了Cudy TR3000这款(不是广告，我倒是想收广告费)。主要因素是小、参数够用，而且之前曾经被非常相似的同方案MT3000种过草，但被高昂的售价吓退了；相比之下这玩意只要123r，在AX3000里也算便宜了，没有mini化的溢价。缺点的话就是单2.5G意义不明(至少两个才有用吧，不过对我来说也不需要)，以及CPU双核A53、存储128M这些参数真的就只是够用而已。
 
-![jd-order.png](https://i.tsk.im/file/BzFuKFF7.png)![photo.JPG](https://i.tsk.im/file/qCoJTKji.jpg)
+![jd-order.png](https://i.tsk.im/file/BzFuKFF7.png)![photo.JPG](https://i.tsk.im/file/O7cAqVxC.jpeg)
 
 Cudy这家还是挺懂的，在OpenWrt Fourm上看到有人适配了TR3000后联系Cudy，这公司就放出了个带签名的解锁固件。具体操作流程参考[这里](https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8411618)，UBoot使用[这个](https://www.right.com.cn/forum/thread-8415351-1-1.html)。
 
