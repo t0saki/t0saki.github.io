@@ -16,3 +16,6 @@ package-lock.json
 vendor/
 .bundle/
 private-data/
+
+# Ignore folders related to IDEs
+.vscode/
